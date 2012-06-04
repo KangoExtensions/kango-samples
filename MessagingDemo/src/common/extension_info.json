@@ -1,0 +1,14 @@
+{
+    "name": "MessagingDemo",
+    "version": "1.1.0",
+    "description": "Messaging API demo",
+    "creator": "KangoExtensions",
+    "homepage_url": "http://kangoextensions.com/",
+    "background_scripts": ["main.js"],
+    "content_scripts": ["content.js"],
+    "browser_button": {
+        "caption": "MessagingDemo",
+        "tooltipText": "MessagingDemo",
+        "icon": "icons/button.png"
+    }
+}
