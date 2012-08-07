@@ -2,100 +2,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-	<script type="text/javascript" src="kango-ui/popup_init.js"></script>
-	<script type="text/javascript">
-		
-		function $(id) {
-			return document.getElementById(id);
-		}
-		
-		var StorageTest = {
-			
-			testGet: function() {
-				$('storage-value').value = kango.storage.getItem($('storage-key').value) || 'null';
-			},
-			
-			testSet: function() {
-				kango.storage.setItem($('storage-key').value, $('storage-value').value);
-			},
-			
-			testRemove: function() {
-				kango.storage.removeItem($('storage-key').value);
-				$('storage-value').value = 'null';
-			}
-		};
-		
-		var XhrTest = {
-			
-			testGet: function() {
-				var details = {
-					url: $('xhr-url').value,
-					method: 'GET',
-					async: true,
-					contentType: 'text'
-				};
-				kango.xhr.send(details, function(data) {
-					$('xhr-result').value = (data.status == 200 && data.response != null) ? data.response : 'Error. Status=' + data.status;
-				});
-			}
-		};
-		
-		function showPopupProperies() {
-			var props = 'window.outerWidth='+window.outerWidth+'\n';
-			props += 'window.outerHeight='+window.outerHeight+'\n';
-			props += 'document.documentElement.clientWidth='+document.documentElement.clientWidth+'\n';
-			props += 'document.documentElement.clientHeight='+document.documentElement.clientHeight+'\n';
-			props += 'document.body.clientWidth='+document.body.clientWidth+'\n';
-			props += 'document.body.clientHeight='+document.body.clientHeight+'\n';
-			props += 'document.body.offsetWidth='+document.body.offsetWidth+'\n';
-			props += 'document.body.offsetHeight='+document.body.offsetHeight+'\n';
-			$('popup-properies').value = props;
-		}
-
-		// --------------------------------------
-		kangoPopup.onReady(function() {
-			$('ready').style.display = 'inline';
-			$('not-ready').style.display = 'none';
-			showPopupProperies();
-		});
-	</script>
+	<script type="text/javascript" src="kango-ui/kango_api.js"></script>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
 </head>
 <body>
 	<h1>Kango WebAPI <span id="not-ready" style="color:red;display:inline;">not ready</span><span id="ready" style="color:green;display:none;">ready</span></h1>	
 	
-	<form onsubmit="return false">
-		<fieldset>	
-			<legend>Popup</legend>
-			<textarea rows="4" cols="60" id="popup-properies"></textarea><br/>
-			<input type="submit" value="Close" onclick="kangoPopup.close()"/>
-		</fieldset>
-	</form>
-	
-	<form onsubmit="return false">
-		<fieldset>	
-			<legend>Storage</legend>
+	<fieldset>	
+		<legend>Popup</legend>
+		<textarea id="popup-properies" rows="4" cols="60"></textarea><br/>
+		<input id="popup-close" type="submit" value="Close"/>
+	</fieldset>
 
-			<label>Key</label>
-			<input id="storage-key" type="text" value="TestKey"/><br/>
-			<label>Value</label>
-			<input id="storage-value" type="text" value=""/><br/>
+	<fieldset>	
+		<legend>Storage</legend>
+		<label>Key</label>
+		<input id="storage-key" type="text" value="TestKey"/><br/>
+		<label>Value</label>
+		<input id="storage-value" type="text" value=""/><br/>
+		<input id="storage-get" type="submit" value="Get"/>
+		<input id="storage-set" type="submit" value="Set"/>
+		<input id="storage-remove" type="submit" value="Remove"/>
+		<input id="storage-keys" type="submit" value="Keys"/>
+	</fieldset>
 
-			<input type="submit" value="Get" onclick="StorageTest.testGet()"/>
-			<input type="submit" value="Set" onclick="StorageTest.testSet()"/>
-			<input type="submit" value="Remove" onclick="StorageTest.testRemove()"/>
-		</fieldset>
-	</form>
-	
-	<form onsubmit="return false">
-		<fieldset>	
-			<legend>XHR</legend>
-			<label>Url</label>
-			<input id="xhr-url" type="text" value="https://twitter.com/statuses/user_timeline/kangoextensions.json?callback=?" size="64"/>
-			<input type="submit" value="Get" onclick="XhrTest.testGet()"/><br/>
-			<label>Result</label><br/>
-			<textarea rows="4" cols="60" id="xhr-result"></textarea><br/>
-		</fieldset>
-	</form>
-		
+	<fieldset>	
+		<legend>XHR</legend>
+		<label>Url</label>
+		<input id="xhr-url" type="text" value="https://twitter.com/statuses/user_timeline/kangoextensions.json?callback=?" size="64"/>
+		<input id="xhr-get" type="submit" value="Get"/><br/>
+		<label>Result</label><br/>
+		<textarea rows="4" cols="60" id="xhr-result"></textarea><br/>
+	</fieldset>	
 </body>
 </html>

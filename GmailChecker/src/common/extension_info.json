@@ -1,6 +1,6 @@
 {
 	"name": "Gmail Checker",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Gmail Checker",
 	"creator": "KangoExtensions",
 	"homepage_url": "http://kangoextensions.com/",
@@ -9,5 +9,6 @@
 		"icon": "icons/button_gray.png",
 		"tooltipText": "Gmail Checker",
 		"caption": "Gmail Checker"
-	}
+	},
+	"default_locale": "en"
 }

@@ -14,13 +14,13 @@ GmailChecker.prototype = {
 	_feedUrl: 'https://mail.google.com/mail/feed/atom',
 	
 	_setOffline: function() {
-		kango.ui.browserButton.setTooltipText('Offline');
+		kango.ui.browserButton.setTooltipText(kango.i18n.getMessage('Offline'));
 		kango.ui.browserButton.setIcon('icons/button_gray.png');
 		kango.ui.browserButton.setBadgeValue(0);
 	},
 	
 	_setUnreadCount: function(count) {
-		kango.ui.browserButton.setTooltipText('Unread count: ' + count);
+		kango.ui.browserButton.setTooltipText(kango.i18n.getMessage('Unread count') + ': ' + count);
 		kango.ui.browserButton.setIcon('icons/button.png');
 		kango.ui.browserButton.setBadgeValue(count);
 	},
@@ -51,4 +51,4 @@ GmailChecker.prototype = {
 	}
 };
 
-new GmailChecker();
+var extension = new GmailChecker();
