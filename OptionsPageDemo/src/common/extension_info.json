@@ -1,0 +1,14 @@
+{
+	"name": "OptionsPageDemo",
+	"version": "0.9",
+	"description": "Options page demo", 
+	"creator": "KangoExtensions",
+	"homepage_url": "http://kangoextensions.com/", 
+	"background_scripts": ["main.js"], 
+	"browser_button": {
+		"caption": "Open options page", 
+		"icon": "icons/button.png", 
+		"tooltipText": "Open options page"
+	}, 
+	"options_page": "options.html"
+}

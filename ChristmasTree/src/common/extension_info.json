@@ -5,6 +5,6 @@
     "creator": "KangoExtensions",
     "homepage_url": "http://kangoextensions.com/",
     "content_scripts": [
-        "jquery-1.7.2.min.js", "tree.js"
+        "tree.js"
     ]
 }

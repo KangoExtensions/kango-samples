@@ -1,7 +1,7 @@
 ﻿function GmailChecker() {
 	var self = this;
 	self.refresh();	
-	kango.ui.browserButton.addEventListener(kango.ui.browserButton.event.Command, function() {
+	kango.ui.browserButton.addEventListener(kango.ui.browserButton.event.COMMAND, function() {
 		kango.browser.tabs.create({url: 'https://mail.google.com/'});
 		self.refresh();
 	});
@@ -35,10 +35,8 @@ GmailChecker.prototype = {
 		var self = this;
 		kango.xhr.send(details, function(data) {
 			if(data.status == 200 && data.response != null) {
-				var text = data.response;
 				var count = 0;
-				var re = /<fullcount>(\d+)<\/fullcount>/;
-				var matches = text.match(re);
+				var matches = data.response.match(/<fullcount>(\d+)<\/fullcount>/);  // Old IE versions doensn't support getElementsByTagNameNS, so we using RegExp
 				if(matches != null && matches.length > 0) {
 					count = matches[1];
 				}

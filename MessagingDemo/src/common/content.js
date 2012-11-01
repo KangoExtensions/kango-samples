@@ -15,16 +15,9 @@ function postPageInfoMessage() {
 	kango.dispatchMessage('PageInfo', pageInfo);
 }
 
-function init() {
-	postPageInfoMessage();
-	
-	// handle messages from background script
-	kango.addMessageListener('GetPageInfo', function(event) {
-		postPageInfoMessage();
-	});
-}
+postPageInfoMessage();
 
-// Ignore frames
-if(window == window.top) {
-	init();
-}
+// handle messages from background script
+kango.addMessageListener('GetPageInfo', function(event) {
+	postPageInfoMessage();
+});
