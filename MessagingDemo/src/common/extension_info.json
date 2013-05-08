@@ -1,8 +1,8 @@
 {
     "name": "MessagingDemo",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "Messaging API demo",
-    "creator": "KangoExtensions",
+    "creator": "Kango",
     "homepage_url": "http://kangoextensions.com/",
     "background_scripts": ["main.js"],
     "content_scripts": ["content.js"],

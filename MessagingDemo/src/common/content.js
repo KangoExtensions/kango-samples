@@ -8,9 +8,9 @@ function postPageInfoMessage() {
 	var pageInfo = {
 		url: document.URL
 	};
-	
+
 	kango.console.log('Sending page info...');
-	
+
 	// dispatch messsage to background script
 	kango.dispatchMessage('PageInfo', pageInfo);
 }

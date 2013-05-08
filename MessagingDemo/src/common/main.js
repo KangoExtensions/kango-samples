@@ -4,7 +4,7 @@
 
 kango.addMessageListener('PageInfo', function(event) {
 	// is message from active tab?
-	if(event.target.isActive()) {
+	if (event.target.isActive()) {
 		kango.console.log('Page info received\nTarget tab url=' + event.target.getUrl());
 		kango.ui.browserButton.setTooltipText(getTooltipTextFromPageInfo(event.data));
 	}

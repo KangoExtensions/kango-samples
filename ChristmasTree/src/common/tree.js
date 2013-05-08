@@ -2,7 +2,8 @@
 // @name ChristmasTree
 // @include http://*
 // @include https://*
-// @require jquery-1.8.2.min.js
+// @include about:blank
+// @require jquery-1.9.1.min.js
 // ==/UserScript==
 
 var $ = window.$.noConflict(true); // Required for Opera and IE
@@ -20,5 +21,3 @@ var tree = $(document.createElement('img')).attr({
 tree.click(function() {
 	alert('Tree click');
 });
-
-
