@@ -1,5 +1,5 @@
 {
-	"name": "Extension name"
+	"name": "Extension name",
 	"version": "1.2.0", 
 	"description": "Extension description", 
 	"creator": "Kango",
@@ -12,5 +12,5 @@
 		"icon": "icons/button.png", 
 		"tooltipText": "Kango"
 	},
-	"default_locale": "en",
+	"default_locale": "en"
 }
