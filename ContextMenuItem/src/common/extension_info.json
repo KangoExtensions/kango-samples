@@ -11,7 +11,7 @@
         "tooltipText": "ContextMenuItemDemo",
         "icon": "icons/button.png"
     },
-	"context_menu_item": {
-		"caption": "ContextMenuItemDemo"
-	}
+    "context_menu_item": {
+        "caption": "ContextMenuItemDemo"
+    }
 }
