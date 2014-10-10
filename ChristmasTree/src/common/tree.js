@@ -6,7 +6,7 @@
 // @require jquery-1.9.1.min.js
 // ==/UserScript==
 
-var $ = window.$.noConflict(true); // Required for Opera and IE
+var $ = window.$.noConflict(true); // Required for IE
 
 var tree = $(document.createElement('img')).attr({
     src: 'http://kangoextensions.com/misc/tree.png',

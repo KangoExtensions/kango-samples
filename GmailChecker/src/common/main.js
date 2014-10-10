@@ -38,7 +38,7 @@ GmailChecker.prototype = {
         kango.xhr.send(details, function(data) {
             if (data.status == 200 && data.response != null) {
                 var count = 0;
-                var matches = data.response.match(/<fullcount>(\d+)<\/fullcount>/);  // Old IE versions doensn't support getElementsByTagNameNS, so we using RegExp
+                var matches = data.response.match(/<fullcount>(\d+)<\/fullcount>/); // Old IE versions don't support getElementsByTagNameNS, so we have to use RegExp
                 if (matches != null && matches.length > 0) {
                     count = matches[1];
                 }
